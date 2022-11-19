@@ -134,4 +134,34 @@ namespace AlgorithmPrograms
             Console.WriteLine();
         }
     }
+
+    //BUBBLE SORT
+    public class BubbleSort
+    {
+        public static void bubbleSort(int[] array)
+        {
+            //int temp;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length - i - 1; j++)
+                {
+                    if (array[j] >= array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+
+                    }
+                }
+            }
+        }
+        /* Prints the array */
+        public static void printArray(int[] arr)
+        {
+            // int n = arr.Length;
+            for (int i = 0; i < arr.Length; ++i)
+                Console.Write(arr[i] + " ");
+            Console.WriteLine();
+        }
+    }
 }

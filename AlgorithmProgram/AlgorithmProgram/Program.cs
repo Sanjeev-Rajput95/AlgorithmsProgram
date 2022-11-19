@@ -25,6 +25,13 @@ namespace AlgorithmPrograms
             InsertionSort.insertionSort(array);
             Console.WriteLine("Inserted Array ");
             InsertionSort.printInsertedArray(array);
+
+            // Bubble sort
+            int[] arr = { 5, 1, 4, 2, 8 };
+            BubbleSort.bubbleSort(arr);
+            Console.WriteLine("Bubble Sorted array ");
+            BubbleSort.printArray(arr);
+            Console.ReadLine();
         }
     }
 }
