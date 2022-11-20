@@ -31,7 +31,9 @@ namespace AlgorithmPrograms
             BubbleSort.bubbleSort(arr);
             Console.WriteLine("Bubble Sorted array ");
             BubbleSort.printArray(arr);
-            Console.ReadLine();
+
+            // Prime Number Range 0 - 1000
+            PrimeNumber.primeNumber();
         }
     }
 }

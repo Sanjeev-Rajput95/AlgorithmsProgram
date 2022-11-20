@@ -164,4 +164,35 @@ namespace AlgorithmPrograms
             Console.WriteLine();
         }
     }
+
+    // Prime Numbers in 0-1000 range
+    public class PrimeNumber
+    {
+        public static void primeNumber()
+        {
+            Console.Write("Enter the number range between 0 - 1000 : " );
+            int number = int.Parse(Console.ReadLine());
+            bool flag = true;
+            if(number <= 1000 && number > 0)
+            {
+                for (int i = 2; i <= number / 2; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        Console.WriteLine($"{number} is a not prime number");
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag == true)
+                {
+                    Console.WriteLine($"{number} is a prime number");
+                }
+            }
+            else
+            {
+                Console.WriteLine("You Entered out of the range.");
+            }
+        }
+    }
 }
