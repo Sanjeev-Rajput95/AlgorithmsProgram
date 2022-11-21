@@ -34,6 +34,17 @@ namespace AlgorithmPrograms
 
             // Prime Number Range 0 - 1000
             PrimeNumber.primeNumber();
+
+            // CHECK STRINGS ARE ANAGRAMS OR NOT
+            Console.WriteLine();
+            Console.Write("Enter first strings : ");
+            string str1 = Console.ReadLine();
+            Console.Write("Enter second strings : ");
+            string str2 = Console.ReadLine();
+            Anagrams.areAnagram(str1, str2);
+            //int result4 = Anagrams.areAnagram(str1, str2);
+
+
         }
     }
 }

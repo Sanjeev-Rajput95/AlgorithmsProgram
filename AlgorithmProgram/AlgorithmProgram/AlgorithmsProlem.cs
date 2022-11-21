@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -192,6 +193,36 @@ namespace AlgorithmPrograms
             else
             {
                 Console.WriteLine("You Entered out of the range.");
+            }
+        }
+    }
+    // CHECK TWO STRINGS ARE ANAGRAMS OR NOT
+    public class Anagrams
+    {
+        /* function to check whether two
+        strings are anagram of each other */
+        public static void areAnagram(string str1, string str2)
+        {
+                // Get lengths of both strings
+                int n1 = str1.Length;
+                int n2 = str2.Length;
+
+                // If length of both strings is not
+                // same, then they cannot be anagram
+                
+            char[] s1 = str1.ToCharArray();
+            char[] s2 = str2.ToCharArray();
+                // Sort both strings
+                Array.Sort(s1);
+                Array.Sort(s2);
+
+            if(s1.SequenceEqual(s2))
+            {
+                Console.WriteLine("Both strings are anagrams.");
+            }
+            else
+            {
+                Console.WriteLine("Both Strings are not anagrams.");
             }
         }
     }
