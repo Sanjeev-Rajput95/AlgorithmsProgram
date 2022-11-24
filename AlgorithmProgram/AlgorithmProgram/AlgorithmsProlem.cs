@@ -172,27 +172,25 @@ namespace AlgorithmPrograms
         public static void primeNumber()
         {
             Console.Write("Enter the number range between 0 - 1000 : " );
-            int number = int.Parse(Console.ReadLine());
-            bool flag = true;
-            if(number <= 1000 && number > 0)
+           // int number = int.Parse(Console.ReadLine());
+            //bool flag = true;
+
+            for(int i = 2; i < 1000; i++)
             {
-                for (int i = 2; i <= number / 2; i++)
+                bool Flag = true;
+                for(int j = 2 ; j < i ; j++)
                 {
-                    if (number % i == 0)
+                    
+                    if (i % j == 0)
                     {
-                        Console.WriteLine($"{number} is a not prime number");
-                        flag = false;
-                        break;
-                    }
+                      
+                        Flag = false;
+                    }       
                 }
-                if (flag == true)
+                if (Flag == true)
                 {
-                    Console.WriteLine($"{number} is a prime number");
-                }
-            }
-            else
-            {
-                Console.WriteLine("You Entered out of the range.");
+                    Console.WriteLine("Prime NUmber is = " + i)
+;               }            
             }
         }
     }
