@@ -292,4 +292,63 @@ namespace AlgorithmPrograms
             }
         }
     }
+
+    // FIND NUMBER
+     
+    public class FindNumber
+    {
+        public static int pickNum = 0;
+        static int count = 0;
+        public static int guessNumber(int number)
+        {
+           
+            int min = 1;
+            int high = number;
+            while(min <= high)
+            {
+                int mid = (min + high) /2;
+                int result = guess(mid);
+                count++;
+               
+                if (result == 0)
+                {
+                    return mid;
+                } else if (result  == -1)
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    min = mid + 1;
+                }
+            }       
+            return -1;
+
+           
+        }
+        public static int guess(int val )
+        {
+           if(val == pickNum)
+            {
+                return 0;
+            } else if(val < pickNum)
+            {
+                Console.WriteLine("Enter -1 if value is less than " + val + " else 0 ");
+                int input = Convert.ToInt32(Console.ReadLine());
+                return 1;
+            }
+            else {
+                Console.WriteLine("Enter 1 if value is greater than " + val + " else 0 ");
+                int input = Convert.ToInt32(Console.ReadLine());
+                return -1; }
+        }
+
+        public static void solve(int n , int pick)
+        {
+            pickNum = pick;
+            int solutionNumber = guessNumber(n);
+
+            Console.WriteLine(solutionNumber +  " Guess try : " + count);
+        }
+    }
 }
