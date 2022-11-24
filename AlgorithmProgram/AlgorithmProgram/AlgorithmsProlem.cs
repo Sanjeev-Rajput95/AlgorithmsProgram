@@ -226,4 +226,61 @@ namespace AlgorithmPrograms
             }
         }
     }
+    public class MergeSort
+    {
+        public static string[] MergeSortProg(String[] a, int fIndex, int lIndex)
+        {
+            if (fIndex < lIndex)
+            {
+                int mid = (fIndex + lIndex) / 2;
+                MergeSortProg(a, fIndex, mid);                        //first array
+                MergeSortProg(a, mid + 1, lIndex);                  //second array
+                merge(a, fIndex, mid, lIndex);                      //merging both the sorted arrays
+            }
+            return a;
+        }
+        public static void merge(String[] givenArr, int fIndex, int mid, int lIndex)
+        {
+            string[] tempArr = new string[givenArr.Length];
+            int i = fIndex;                      //index for the first part of the array
+            int j = mid + 1;                //for the second part of the array
+            int k = fIndex;                     //index numtempArrer for the new array formed
+            while (i <= mid && j <= lIndex)
+            {
+                if (givenArr[i].CompareTo(givenArr[j]) <= 0)                 //if second array has greater element than the first array element
+                {
+                    tempArr[k] = givenArr[i];                // tempArr[k] = {given[i]}
+                    i++;
+                }
+                else                                         //if first array has greater element than the seconds array element
+                {
+                    tempArr[k] = givenArr[j];
+                    j++;
+                }
+                k++;                                    //third array element index incemented
+            }
+            if (i > mid)                                //if first array has fully tempArreen copied tempArrut second hasn't
+            {
+                while (j <= lIndex)
+                {
+                    tempArr[k] = givenArr[j];
+                    j++;
+                    k++;
+                }
+            }
+            else if (j > lIndex)                            //if second array has fully tempArreen copied tempArrut first hasn't
+            {
+                while (i <= mid)
+                {
+                    tempArr[k] = givenArr[i];
+                    i++;
+                    k++;
+                }
+            }
+            for (int x = fIndex; x <= lIndex; x++)                 //coping data from tempArr array to the first array
+            {
+                givenArr[x] = tempArr[x];
+            }
+        }
+    }
 }

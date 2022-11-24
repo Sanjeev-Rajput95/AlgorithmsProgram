@@ -44,7 +44,16 @@ namespace AlgorithmPrograms
             Anagrams.areAnagram(str1, str2);
             //int result4 = Anagrams.areAnagram(str1, str2);
 
+            // MERGE SORT
 
+            String[] array1 = {"ABC","LCD","BLM","ZBC"};
+            Console.WriteLine();
+            string[] newArray = MergeSort.MergeSortProg(array1, 0, array1.Length - 1);
+            Console.WriteLine("Merge sort :- ");
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                Console.Write(newArray[i] + " ");
+            }
         }
     }
 }
