@@ -64,7 +64,7 @@ namespace AlgorithmPrograms
         //    }
         //}
 
-       public static int binarySearch(String[] arr, String str)
+       public static int binarySearch<T>(T[] arr, T str) where T : IComparable<T>
         {
             int low = 0, high = arr.Length - 1;
             while (low <= high)
@@ -111,13 +111,13 @@ namespace AlgorithmPrograms
     // INSERTION SORT
     public class InsertionSort
     {
-        public static void insertionSort(int[] array)
+        public static void insertionSort<T>(T[] array) where T : IComparable<T>
         {
             for(int i = 1; i < array.Length; i++)
             {
-                int temp = array[i];
+                T temp = array[i];
                 int j = i - 1;
-                while( j >= 0 && array[j] > temp)
+                while( j >= 0 && array[j].CompareTo(temp) > 0)
                 {
                     array[j + 1] = array[j];
                     j--;
@@ -126,7 +126,7 @@ namespace AlgorithmPrograms
             }
         }
         // print inserted array
-        public static void printInsertedArray(int[] array)
+        public static void printInsertedArray<T>(T[] array)
         {
             for(int i = 0; i < array.Length; ++i)
             {
@@ -139,16 +139,16 @@ namespace AlgorithmPrograms
     //BUBBLE SORT
     public class BubbleSort
     {
-        public static void bubbleSort(int[] array)
+        public static void bubbleSort<T>(T[] array) where T : IComparable<T>
         {
             //int temp;
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length - i - 1; j++)
                 {
-                    if (array[j] >= array[j + 1])
+                    if (array[j].CompareTo(array[j + 1])>0)
                     {
-                        int temp = array[j];
+                        T temp = array[j];
                         array[j] = array[j + 1];
                         array[j + 1] = temp;
 
