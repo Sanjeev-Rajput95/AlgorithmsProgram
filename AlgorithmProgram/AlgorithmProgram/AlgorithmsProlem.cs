@@ -297,58 +297,27 @@ namespace AlgorithmPrograms
      
     public class FindNumber
     {
-        public static int pickNum = 0;
-        static int count = 0;
-        public static int guessNumber(int number)
+        public static void guessNumber(int high)
         {
-           
-            int min = 1;
-            int high = number;
-            while(min <= high)
+            int count = 0;
+            int min = 0;
+            while (min != high)
             {
-                int mid = (min + high) /2;
-                int result = guess(mid);
                 count++;
-               
-                if (result == 0)
+                int mid = (min + high) / 2;
+                Console.WriteLine($"Enter 1 for between {min} to {mid} \nEnter 2 for between {mid + 1} to {high} ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                if (num == 1)
                 {
-                    return mid;
-                } else if (result  == -1)
-                {
-                    high = mid - 1;
+                    high = mid;
                 }
-                else
+                else if (num == 2)
                 {
                     min = mid + 1;
                 }
-            }       
-            return -1;
-
-           
-        }
-        public static int guess(int val )
-        {
-           if(val == pickNum)
-            {
-                return 0;
-            } else if(val < pickNum)
-            {
-                Console.WriteLine("Enter -1 if value is less than " + val + " else 0 ");
-                int input = Convert.ToInt32(Console.ReadLine());
-                return 1;
             }
-            else {
-                Console.WriteLine("Enter 1 if value is greater than " + val + " else 0 ");
-                int input = Convert.ToInt32(Console.ReadLine());
-                return -1; }
-        }
 
-        public static void solve(int n , int pick)
-        {
-            pickNum = pick;
-            int solutionNumber = guessNumber(n);
-
-            Console.WriteLine(solutionNumber +  " Guess try : " + count);
+            Console.WriteLine("Guess Number is : " + min + " \n Count is : " + count);
         }
     }
 }

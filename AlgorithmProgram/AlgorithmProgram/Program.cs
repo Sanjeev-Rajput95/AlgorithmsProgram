@@ -56,13 +56,15 @@ namespace AlgorithmPrograms
             //    Console.Write(newArray[i] + " ");
             //}
 
-            // UC10 - FIND NUMBER
+            // UC10 - FIND GUESS NUMBER
 
             Console.WriteLine("Enter the max limit you want : ");
             int num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the Guess Number you think : ");
-            int pickedNum = Convert.ToInt32(Console.ReadLine());
-            FindNumber.solve(num, pickedNum);
+            Console.WriteLine($" the Guess Number from 0 to {num}  ");
+            Console.ReadLine();
+            FindNumber.guessNumber(num);
+            //int pickedNum = Convert.ToInt32(Console.ReadLine());
+           // FindNumber.solve(num, pickedNum);
 
 
         }
